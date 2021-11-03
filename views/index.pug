@@ -2,7 +2,16 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  p This is navya's local host
-  //a(claa='button') Press Me
-  <button (type="button", xclass = "btn-btn-secondary")>PressME</button>
+  p Welcome to  Navya preethi Taidala  #{title}
+  button(type="button", class="btn btn-secondary", onclick="update()") Press Me
+  <br>
+  <br>
+  div(id="target") Display
+  a(href = '/fan') Monkey Page link
+  |
+  script. 
+    let client_count = 0;
+    function update() {
+      client_count = client_count + 1;
+      document.getElementById("target").innerHTML = `Value now ${client_count}`  ;
+      }
